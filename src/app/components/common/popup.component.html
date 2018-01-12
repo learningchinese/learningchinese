@@ -1,0 +1,19 @@
+<div [ngClass]="{'modal fade': true, 'hidden': !popupService.isOn,'in': popupService.isOn, 'show': popupService.isOn}" tabindex="-1"
+    role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" aria-label="Close" (click)="popupService.reset()">
+                    <span aria-hidden="true" (click)="popupService.reset()">&times;</span>
+                </button>
+                <h4 class="modal-title">{{popupService.title}}</h4>
+            </div>
+            <div class="modal-body" [innerHtml]="popupService.content">
+            </div>
+            <div class="modal-footer">
+                <button [hidden]="!popupService.isEnableCancel()" type="button" class="btn btn-default" (click)="popupService.invokeCancel()">Cancel</button>
+                <button type="button" class="btn btn-primary" (click)="popupService.invokeSubmit()">OK</button>
+            </div>
+        </div>
+    </div>
+</div>

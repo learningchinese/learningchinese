@@ -1,0 +1,13 @@
+<h3>Tracks ({{totalTracks}})</h3>
+<div class="col-sm-offset-2 col-sm-10">
+    <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="term" name="term" placeholder="Search" (keypress)="enterSearch($event.keyCode)"
+        />
+        <div class="input-group-btn">
+            <button class="btn btn-success" (click)="searchTrack()">Search</button>
+        </div>
+    </div>
+</div>
+<pagination [pagination]="pagination" (onSelectPage)="loadPage($event)" (onPrePagination)="detectPrePagination($event)" (onNextPagination)="detectNextPagination($event)"></pagination>
+<hits-track [tracks]="tracks"></hits-track>
+<pagination [pagination]="pagination" (onSelectPage)="loadPage($event)" (onPrePagination)="detectPrePagination($event)" (onNextPagination)="detectNextPagination($event)"></pagination>
