@@ -19,6 +19,7 @@ import { PopupService } from "./services/popup.service";
 
 import { UserService } from "./services/user.service";
 import { AuthService } from "./services/auth.service";
+import { SingleCharacterService } from "./services/single-character.service"
 
 import { StringUtil } from "./utils/string.util";
 import { StoreUtil } from "./utils/store.util";
@@ -45,7 +46,8 @@ import { StoreUtil } from "./utils/store.util";
     StringUtil,
     PopupService,
     UserService,
-    StoreUtil
+    StoreUtil,
+    SingleCharacterService
   ],
   bootstrap: [AppComponent]
 })

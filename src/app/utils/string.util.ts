@@ -278,4 +278,18 @@ export class StringUtil {
 
         return str;
     }
+
+    public checkChineseCharacter(str: string): boolean {
+        if (!str) {
+            return false;
+        }
+        let regexChineseChar = new RegExp("^[\u4E00-\uFA29]*$");
+        let regexNonChineseChar = new RegExp("^[\uE7C7-\uE7F3]*$");
+        str = str.replace(/\s/g, '');
+
+        if (!regexChineseChar.test(str) || regexNonChineseChar.test(str)) {
+            return false;
+        }
+        return true;
+    }
 }

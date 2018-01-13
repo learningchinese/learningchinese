@@ -56,9 +56,12 @@ constructor(private appConfig: AppConfig, private authService: AuthService, priv
         this.currentTab = menuItem;
     }
 
-    isLoginEnable(): boolean {
-        //return !this.authService.isAuthenticated();
+    isRightMenuEnable(): boolean {
         return false;
+    }
+
+    isLoggedIn(): boolean {
+        return !this.authService.isAuthenticated();
     }
     
     logout(): void {

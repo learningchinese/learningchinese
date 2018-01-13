@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-sm-4">
+        <div class="input-group">
+            <input type="text" maxlength="8" class="form-control" [(ngModel)]="term" name="term" placeholder="Input Character" (keypress)="enterSearch($event.keyCode)"
+            />
+            <div class="input-group-btn">
+                <button class="btn btn-success" (click)="searchCharacter()">Search</button>
+            </div>
+        </div>
+        <h4>{{char.sc}}</h4>
+        <div class="embed-responsive embed-responsive-1by1">
+            <img #gifImg class="embed-responsive-item" [src]="gifUrl ? gifUrl : ''" />
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <h4>Definition</h4>
+        {{char.definition}}
+    </div>
+</div>
