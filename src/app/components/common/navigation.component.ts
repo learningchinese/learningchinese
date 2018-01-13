@@ -5,7 +5,6 @@ import { AppConfig } from "../../configs/app.config";
 
 import { AuthService }  from '../../services/auth.service';
 import { PopupService }  from '../../services/popup.service';
-import { fail } from "assert";
 
 @Component({
     selector: "navigation",

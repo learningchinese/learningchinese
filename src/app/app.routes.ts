@@ -20,6 +20,10 @@ const appRoutes: Routes = [
         component: CharacterComponent
     },
     {
+        path: "character/:char",
+        component: CharacterComponent
+    },
+    {
         path: "about",
         component: AboutComponent
     }

@@ -1,4 +1,6 @@
-import { Component, OnInit, ElementRef, ViewChild, Renderer } from "@angular/core";
+import { Component, OnInit, OnDestroy, ElementRef, ViewChild, Renderer } from "@angular/core";
+import { Subscription } from "rxjs/Subscription";
+import { ActivatedRoute } from "@angular/router";
 
 import { StoreUtil } from "../../utils/store.util"
 import { StringUtil } from "../../utils/string.util";
@@ -11,13 +13,14 @@ import { SingleCharacterService } from "../../services/single-character.service"
     templateUrl: "./character.component.html",
     styleUrls: []
 })
-export class CharacterComponent implements OnInit {
-    private static get LAST_TERM_STORE_KEY() {return 'LAST_TERM_STORE_KEY'};
+export class CharacterComponent implements OnInit, OnDestroy {
+    private static get LAST_TERM_STORE_KEY() { return 'LAST_TERM_STORE_KEY' };
 
     private term: string;
     private gifUrl: string;
     private flagLockImg: boolean = false;
     private flagCustomImg: boolean = false;
+    private sub: Subscription;
 
     private char: SingleCharacter;
 
@@ -27,17 +30,20 @@ export class CharacterComponent implements OnInit {
         private popupService: PopupService,
         private renderer: Renderer,
         private singleCharacterService: SingleCharacterService,
-        private storeUtil: StoreUtil
+        private storeUtil: StoreUtil,
+        private route: ActivatedRoute,
     ) {
         this.char = new SingleCharacter();
     }
 
     ngOnInit(): void {
-        this.term = this.storeUtil.cache.get(CharacterComponent.LAST_TERM_STORE_KEY);
-        if (!this.term) {
-            this.term = '好';
-        }
-        this.searchCharacter();
+        this.sub = this.route.params.subscribe(params => {
+            this.term = params['char'];
+            if (!this.term) {
+                this.term = this.storeUtil.cache.has(CharacterComponent.LAST_TERM_STORE_KEY) ? this.storeUtil.cache.get(CharacterComponent.LAST_TERM_STORE_KEY) : '好';
+            }
+            this.searchCharacter;
+        });
 
         this.renderer.listen(this.viewGifImg.nativeElement, "load", (event) => {
             this.flagLockImg = true;
@@ -67,6 +73,10 @@ export class CharacterComponent implements OnInit {
         });
     }
 
+    ngOnDestroy(): void {
+        this.sub.unsubscribe();
+    }
+
     private loadGifImg() {
         this.gifUrl = this.char.sc ? '/assets/gif/char/' + this.char.sc : '';
         this.flagCustomImg = false;
@@ -74,7 +84,7 @@ export class CharacterComponent implements OnInit {
 
     private searchCharacter() {
         if (this.term != null && this.term.trim() != '') {
-            this.singleCharacterService.findByCharacter(this.term + '')
+            this.singleCharacterService.findByCharacter(this.term)
                 .then(entity => {
                     this.char = entity;
                     this.loadGifImg();
@@ -92,4 +102,27 @@ export class CharacterComponent implements OnInit {
         }
     }
 
+    prettyDefinition(s: string) {
+        let html = '';
+        if (s) {
+            let ulOpen = false;
+            let lines = s.split('\n').filter(t => !!t && t.length > 0);
+            for (let i = 0, n = lines.length; i < n; i++) {
+                if (/^\s+/.test(lines[i])) {
+                    if (!ulOpen) {
+                        html += '<ul>';
+                        ulOpen = true;
+                    }
+                    html += `<li>${lines[i]}</li>`;
+                } else {
+                    if (ulOpen) {
+                        html += '</ul>';
+                        ulOpen = false;
+                    }
+                    html += `<p>${lines[i]}</p>`;
+                }
+            }
+        }
+        return html;
+    }
 }

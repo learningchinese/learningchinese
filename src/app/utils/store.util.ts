@@ -2,5 +2,5 @@ import {Injectable} from "@angular/core";
 
 @Injectable()
 export class StoreUtil {
-    cache: Map<string, string> = new Map<string, string>();
+    cache: Map<string, any> = new Map<string, any>();
 }

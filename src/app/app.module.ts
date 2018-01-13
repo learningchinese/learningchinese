@@ -10,6 +10,8 @@ import { NavigationComponent } from "./components/common/navigation.component";
 import { DashBoardComponent } from "./components/common/dash-board.component";
 import { AboutComponent } from "./components/about/about.component";
 import { CharacterComponent } from "./components/character/character.component";
+import { PaginationComponent } from "./components/common/pagination.component";
+
 
 import { AppConfig } from "./configs/app.config";
 import { PermissionDirective } from "./directives/permission.directive";
@@ -23,6 +25,7 @@ import { SingleCharacterService } from "./services/single-character.service"
 
 import { StringUtil } from "./utils/string.util";
 import { StoreUtil } from "./utils/store.util";
+import { SanitizeHtmlPipe } from "./pipes/sanitize-html.pipe";
 
 @NgModule({
   imports: [
@@ -38,7 +41,9 @@ import { StoreUtil } from "./utils/store.util";
     PopupComponent,
     DashBoardComponent,
     AboutComponent,
-    CharacterComponent
+    CharacterComponent,
+    PaginationComponent,
+    SanitizeHtmlPipe
   ],
   providers: [
     AppConfig,

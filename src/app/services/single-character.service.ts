@@ -7,10 +7,16 @@ import { AppConfig } from "../configs/app.config";
 import { HitList } from "../models/hit-list.model";
 
 import { StringUtil } from "../utils/string.util"
+import { StoreUtil } from "../utils/store.util"
+import { resolve } from "url";
+import { reject } from "q";
 
 @Injectable()
 export class SingleCharacterService extends Service<SingleCharacter> {
-    constructor(http: Http, private appConfig: AppConfig, private stringUtil: StringUtil) {
+
+    private static get CHAR_MAP_IDX() { return 'CHAR_MAP_IDX' };
+
+    constructor(http: Http, private appConfig: AppConfig, private stringUtil: StringUtil, private storeUtil: StoreUtil) {
         super(http, appConfig.serverApiUrl + "/api/v1/character");
     }
 
@@ -32,14 +38,7 @@ export class SingleCharacterService extends Service<SingleCharacter> {
         //dummy check
         return this.checkImage('/assets/gif/char/' + c)
             .then(response => {
-                console.log(response);
-                let char = new SingleCharacter();
-                char.sc = c;
-                char.tc = char.sc;
-                char.definition = 'Definition of ' + c;
-                char.pinyinNum = 'pinyin num of ' + c;
-                char.pinyinTone = 'pinyin of ' + c;
-                return char;
+                return this.findSingleCharacter(c);
             })
             .catch(err => {
                 return Promise.reject('Character is not found.');
@@ -59,4 +58,49 @@ export class SingleCharacterService extends Service<SingleCharacter> {
         });
     }
 
+    private findSingleCharacter(c): Promise<SingleCharacter> {
+        return this.findCharacterIndexPage(c)
+            .then(idx => {
+                return this.findCommonCharacters(idx, 20).then(hitList => {
+                    let char: SingleCharacter = hitList.hits.find(t => t.sc === c || t.tc === c);
+                    if (!char) {
+                        throw Error(`Not found character "${c}"`);
+                    }
+                    return char;
+                })
+            }).catch(err => err);
+    }
+
+    private findCharacterIndexPage(c: string): Promise<number> {
+        return new Promise((resolve, reject) => {
+            if (this.storeUtil.cache.has(SingleCharacterService.CHAR_MAP_IDX)) {
+                let charMapIdx = this.storeUtil.cache.get(SingleCharacterService.CHAR_MAP_IDX);
+                resolve(+charMapIdx[c]);
+            } else {
+                return this.http.get('/assets/json/common-characters/index.json')
+                    .toPromise()
+                    .then(res => {
+                        let charMapIdx = res.json();
+                        this.storeUtil.cache.set(SingleCharacterService.CHAR_MAP_IDX, charMapIdx);
+                        return +charMapIdx[c];
+                    }).catch(err => reject(err));
+            }
+        });
+    }
+
+    /**
+     * Find common characters
+     * @param page {number} - page index
+     * @param size {number} - page size
+     */
+    findCommonCharacters(page: number = 0, size?: number): Promise<HitList<SingleCharacter>> {
+        let url = `/assets/json/common-characters/${page}.json`;
+        return this.http.get(url)
+            .toPromise()
+            .then(response => {
+                let data = response.json();;
+                return new HitList<SingleCharacter>(data);
+            })
+            .catch(this.handleError);
+    }
 }

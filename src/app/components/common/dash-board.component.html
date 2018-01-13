@@ -1,13 +1,30 @@
-<h3>Tracks ({{totalTracks}})</h3>
-<div class="col-sm-offset-2 col-sm-10">
-    <div class="input-group">
-        <input type="text" class="form-control" [(ngModel)]="term" name="term" placeholder="Search" (keypress)="enterSearch($event.keyCode)"
-        />
-        <div class="input-group-btn">
-            <button class="btn btn-success" (click)="searchTrack()">Search</button>
-        </div>
-    </div>
-</div>
+<h3>The most common Chinese characters in order of frequency</h3>
+
 <pagination [pagination]="pagination" (onSelectPage)="loadPage($event)" (onPrePagination)="detectPrePagination($event)" (onNextPagination)="detectNextPagination($event)"></pagination>
-<hits-track [tracks]="tracks"></hits-track>
+<div class="row">
+    <table class="table">
+        <thead>
+            <th class="col-sm-1 text-center">#</th>
+            <th class="col-sm-3 text-center">Character</th>
+            <th class="col-sm-8 text-center">Pronunciations and explanations</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of characters">
+                <td class="text-center">{{item._id}}</td>
+                <td>
+                    <div class="text-center char-box">
+                        <a routerLink="/character/{{item.sc}}">{{item.sc}}</a>
+                        <span *ngIf="!!item.tc">
+                            (F
+                            <a routerLink="/character/{{item.tc}}">{{item.tc}}</a>)
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <div [innerHTML]="prettyDefinition(item.definition) | sanitizeHtml"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 <pagination [pagination]="pagination" (onSelectPage)="loadPage($event)" (onPrePagination)="detectPrePagination($event)" (onNextPagination)="detectNextPagination($event)"></pagination>

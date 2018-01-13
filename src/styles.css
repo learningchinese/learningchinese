@@ -110,3 +110,11 @@ body { padding-bottom: 70px; }
     padding-bottom: 100%;
 }
 /* END: custom boostrap btn*/
+
+td pre {
+    background-color: #ffffff00;
+    border: none;
+}
+.char-box {
+    font-size: 36px;
+}
