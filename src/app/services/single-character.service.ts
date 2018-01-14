@@ -67,25 +67,23 @@ export class SingleCharacterService extends Service<SingleCharacter> {
                         throw Error(`Not found character "${c}"`);
                     }
                     return char;
-                })
+                }).catch(err => err);
             }).catch(err => err);
     }
 
     private findCharacterIndexPage(c: string): Promise<number> {
-        return new Promise((resolve, reject) => {
-            if (this.storeUtil.cache.has(SingleCharacterService.CHAR_MAP_IDX)) {
-                let charMapIdx = this.storeUtil.cache.get(SingleCharacterService.CHAR_MAP_IDX);
-                resolve(+charMapIdx[c]);
-            } else {
-                return this.http.get('/assets/json/common-characters/index.json')
-                    .toPromise()
-                    .then(res => {
-                        let charMapIdx = res.json();
-                        this.storeUtil.cache.set(SingleCharacterService.CHAR_MAP_IDX, charMapIdx);
-                        return +charMapIdx[c];
-                    }).catch(err => reject(err));
-            }
-        });
+        if (this.storeUtil.cache.has(SingleCharacterService.CHAR_MAP_IDX)) {
+            let charMapIdx = this.storeUtil.cache.get(SingleCharacterService.CHAR_MAP_IDX);
+            return Promise.resolve(+charMapIdx[c]);
+        } else {
+            return this.http.get('/assets/json/common-characters/index.json')
+                .toPromise()
+                .then(res => {
+                    let charMapIdx = res.json();
+                    this.storeUtil.cache.set(SingleCharacterService.CHAR_MAP_IDX, charMapIdx);
+                    return +charMapIdx[c];
+                }).catch(err => err);
+        }
     }
 
     /**

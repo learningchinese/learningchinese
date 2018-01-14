@@ -22,7 +22,7 @@ export class CharacterComponent implements OnInit, OnDestroy {
     private flagCustomImg: boolean = false;
     private sub: Subscription;
 
-    public char: SingleCharacter;
+    public char: SingleCharacter = new SingleCharacter();
 
     @ViewChild("gifImg") viewGifImg: ElementRef;
 
@@ -33,16 +33,17 @@ export class CharacterComponent implements OnInit, OnDestroy {
         private storeUtil: StoreUtil,
         private route: ActivatedRoute,
     ) {
-        this.char = new SingleCharacter();
     }
 
     ngOnInit(): void {
         this.sub = this.route.params.subscribe(params => {
-            this.term = params['char'];
-            if (!this.term) {
+            let c = params['char'];
+            if (!!c) {
+                this.term = c;
+            } else {
                 this.term = this.storeUtil.cache.has(CharacterComponent.LAST_TERM_STORE_KEY) ? this.storeUtil.cache.get(CharacterComponent.LAST_TERM_STORE_KEY) : '好';
             }
-            this.searchCharacter;
+            this.searchCharacter();
         });
 
         this.renderer.listen(this.viewGifImg.nativeElement, "load", (event) => {
