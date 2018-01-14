@@ -111,7 +111,7 @@ function isChineseCharacter(str) {
 
 let MAP_IDX = '';
 //0, 1, 2,...,150
-const FILE_COUNT = 3;
+const FILE_COUNT = 16;
 for(let i = 0; i < FILE_COUNT; i++) {
     buildJson(i);
 }

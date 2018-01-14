@@ -1,16 +1,16 @@
 为 (F 為)
 [wèi] for, for the sake of, in order to, in this connection
-[wéi] do, act, act as, be, become; 
-    认为 rènwéi think or believe that...; 
+[wéi] do, act, act as, be, become;
+    认为 rènwéi think or believe that...;
     以为 yǐ wéi think or believe erroneously that...
 {Compare with 办 bàn do}
 
 22
 子
-[zǐ] child, son; 
-    子女 zǐnǚ sons and daughters; 
+[zǐ] child, son;
+    子女 zǐnǚ sons and daughters;
     儿子 érzi son
-[zi] (noun suffix); 
+[zi] (noun suffix);
     桌子 zhuōzi table
 {Compare with 了 le <particle>}
 
@@ -27,31 +27,31 @@
 
 24
 你
-[nǐ] (Alternative feminine form: 妳 nǐ) you, your; 
+[nǐ] (Alternative feminine form: 妳 nǐ) you, your;
     你们 nǐmen you (plural)
 
 25
 地
-[dì] earth, ground, soil, place, position, distance; 
+[dì] earth, ground, soil, place, position, distance;
     地支 dìzhī the Twelve Terrestrial Branches
-[de] <adverbial particle: descripion + 地 + verb>, ~ly; 
+[de] <adverbial particle: descripion + 地 + verb>, ~ly;
     快地走 kuàide zǒu walk quickly
 
 26
 出
-[chū] go out, come out, in direction out from something, emit, issue, prouce; 
+[chū] go out, come out, in direction out from something, emit, issue, prouce;
     出现 chūxiàn appear, emerge, (F 齣) <classifier for operas and plays>
 
 27
 道
-[dào] way, path, channel, way, say, a streak (of light), doctrine, <classifier for rivers, topics, etc.>, (= 道教 Dàojiào) Taoism; 
+[dào] way, path, channel, way, say, a streak (of light), doctrine, <classifier for rivers, topics, etc.>, (= 道教 Dàojiào) Taoism;
     知道 zhīdao know
-[dǎo] (= 导 dǎo) lead; 
+[dǎo] (= 导 dǎo) lead;
     领道 = 领导 lǐngdǎo leader
 
 28
 也
-[yě] also, as well; 
+[yě] also, as well;
     也许 yěxǔ perhaps
 
 29
@@ -60,24 +60,24 @@
 
 30
 年
-[nián] year, <family name>; 
-    今年 jīnnián this year; 
-    明年 míngnián next year; 
-    去年 qùnián last year; 
+[nián] year, <family name>;
+    今年 jīnnián this year;
+    明年 míngnián next year;
+    去年 qùnián last year;
     中年 zhōngnián middle age
 
 31
 得
-[de] <adverbial particle: verb + 得 + descripion>; 
+[de] <adverbial particle: verb + 得 + descripion>;
     走得快 zǒude kuài walk quickly
 [dé] get, reach, achieve
 [děi] should
 
 32
 就
-[jiù] just, simply, right away; 
-    就要 jiùyào about to (do something); 
-    这就是我 ! Zhè jiùshì wǒ! This is simply me!; 
+[jiù] just, simply, right away;
+    就要 jiùyào about to (do something);
+    这就是我 ! Zhè jiùshì wǒ! This is simply me!;
     他就要去. Tā jiùyào qù. He is about to leave.
 
 33
@@ -91,7 +91,7 @@
 
 34
 要
-[yào] want, will, shall, need, important, essential; 
+[yào] want, will, shall, need, important, essential;
     主要 zhǔyào main, fundamental
 [yāo] 要求 yāoqiú demand
 
@@ -102,14 +102,14 @@
 
 36
 以
-[yǐ] use, take, according to, because of, in order to; 
-    可以 kěyǐ OK, may; 
-    所以 suǒyǐ so, therefore, as a result; 
+[yǐ] use, take, according to, because of, in order to;
+    可以 kěyǐ OK, may;
+    所以 suǒyǐ so, therefore, as a result;
     以外 yǐwài beyond, except
 
 37
 生
-[shēng] give birth, life; 
+[shēng] give birth, life;
     先生 xiānsheng mister, gentleman, Sir
 
 38
@@ -120,7 +120,7 @@
 
 39
 自
-[zì] from, since, (= 自己 zìjǐ) self; 
+[zì] from, since, (= 自己 zìjǐ) self;
     自然 zìrán nature
 {Compare with 目 mù eye and 白 bái white}
 

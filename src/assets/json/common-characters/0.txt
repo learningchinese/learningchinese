@@ -23,24 +23,24 @@
 
 3
 是
-[shì] to be, 是不是 ? shìbushì ? is (it) or is (it) not ?; 
+[shì] to be, 是不是 ? shìbushì ? is (it) or is (it) not ?;
     是否shìfǒu whether or not, is (it) or is (it) not?
 
 4
 不
 [bù] not
-[bú] (used before tone #4); 
+[bú] (used before tone #4);
     不是 bú shì isn't
 
 5
 了
-[le] <verb particle marking a new situation or a completed action>; 
-    你来了! Nǐ láile! You have come! 
-    我累了! Wǒ lèile! I've gotten tired! 
+[le] <verb particle marking a new situation or a completed action>;
+    你来了! Nǐ láile! You have come!
+    我累了! Wǒ lèile! I've gotten tired!
     那好了! Nà hǎole! That's OK (now)!
     我只请了一位客人. Wǒ zhǐ qǐngle yí wèi kèren. I invited only one guest.
-[liǎo] end, finish, settle, dispose of, know clearly, to be able, (=了解 liǎojiě) understand, comprehend; 
-    了了liǎoliǎo clearly understand, settle (a debt/etc.), to be intelligent; 
+[liǎo] end, finish, settle, dispose of, know clearly, to be able, (=了解 liǎojiě) understand, comprehend;
+    了了liǎoliǎo clearly understand, settle (a debt/etc.), to be intelligent;
     了了 liǎole to be over/ended/finnish/settled;
     你卖不了 ! Nǐ mài bùliǎo! You will not be able to sell (it)!
 [liào] (=瞭 liào) to survey/watch
@@ -48,8 +48,8 @@
 
 6
 人
-[rén] person; 
-    人类 rénlèi humankind; 
+[rén] person;
+    人类 rénlèi humankind;
     有人吗 ? yǒu rén ma? Is there anybody here?
 {Compare with 入rù enter}
 
@@ -61,15 +61,15 @@
 
 8
 在
-[zài] at; 
-    现在 xiànzài now; 
+[zài] at;
+    现在 xiànzài now;
     存在 cúnzài exist
 
 9
 有
-[yǒu] have, there is; 
-    没有 méiyǒu haven't, there isn't; 
-    有没有 ? Yǒuméiyǒu? Is there or isn't there? Have (you) or haven't (you)?; 
+[yǒu] have, there is;
+    没有 méiyǒu haven't, there isn't;
+    有没有 ? Yǒuméiyǒu? Is there or isn't there? Have (you) or haven't (you)?;
     有的 yǒude some
 [yòu] (=又 yòu) again, both... and...
 
@@ -80,20 +80,20 @@
 
 11
 这 (F 這)
-[zhè] this; 
+[zhè] this;
     这儿 zhèr here
 [zhèi] this (before classifier)
 
 12
 中
-[zhōng] middle, in; 
+[zhōng] middle, in;
     中国 Zhōngguó China
     [zhòng] hit (a target)
 
 13
 大
-[dà] big; 
-    多大 ? duōdà ? how large?; 
+[dà] big;
+    多大 ? duōdà ? how large?;
     大小 dàxiǎo size;
     大家 dàjiā everybody
 [dài]
@@ -103,29 +103,29 @@
 14
 来 (F 來)
 [lái] come;
-    原来 yuánlái originally, as a matter of fact; 
+    原来 yuánlái originally, as a matter of fact;
     来年 láinián coming/next year(s)
-[lai] (when used as a verb complement); 
+[lai] (when used as a verb complement);
     起来 qǐlai get up
 
 15
 上
 [shàng] above, on, over, top, (go) up, last, previous
-[shǎng] 
+[shǎng]
     上声 shǎngshēng 3rd tone in Mandarin
 [shang] (when used as a verb complement)
 {Compare with 下xià under}
 
 16
 国 (F 國)
-[guó] (=国家 guójiā) country, state, nation, <family name>; 
-    中国 Zhōngguó China; 
+[guó] (=国家 guójiā) country, state, nation, <family name>;
+    中国 Zhōngguó China;
     美国 Měiguó USA
 
 17
 个 (F 個, 箇)
-[gè] <general and non-specific classifier>; 
-    个人 gèrén personal; 
+[gè] <general and non-specific classifier>;
+    个人 gèrén personal;
     个人主页 gèrénzhùyè personal homepage
 [gě]
     自个 zìgě oneself
@@ -136,15 +136,15 @@
 
 19
 说 (F 說)
-[shuō] explain, scold, refer to, (=说话 shuōhuà) speak, say; 
+[shuō] explain, scold, refer to, (=说话 shuōhuà) speak, say;
     游说 yóushuō persuade
-[shuì] try to persuade; 
+[shuì] try to persuade;
     游说 yóushuì lobbying
 
 20
 们 (F 們)
-[men] <pluralizing suffix for pronouns and nouns referring to persons>; 
-    我们 wǒmen we; 
+[men] <pluralizing suffix for pronouns and nouns referring to persons>;
+    我们 wǒmen we;
     人们 rénmen people, persons
 
 21

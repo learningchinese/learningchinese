@@ -1,5 +1,5 @@
 去
-[qù] go, leave, depart 
+[qù] go, leave, depart
 (opposite of 来lái)
 
 42
@@ -8,35 +8,35 @@
 
 43
 过 (F 過)
-[guò] pass, cross, go by, exceed, <verb particle marking that someone has had the experience of doing something, that it has happened at least once>; 
-    过马路 guò mǎlù cross the street; 
+[guò] pass, cross, go by, exceed, <verb particle marking that someone has had the experience of doing something, that it has happened at least once>;
+    过马路 guò mǎlù cross the street;
     我去过中国两次. wǒ qùguo Zhōngguó liǎng cì. I have gone to China twice.
 
 44
 家
-[jiā] home, house, family; 
-    国家 guójiā nation; 
+[jiā] home, house, family;
+    国家 guójiā nation;
     大家 dàjiā everybody
     家里 jiālǐ (at) home, (in the) family
-[jie] 整天家 zhěngtiānjie all day long; 
+[jie] 整天家 zhěngtiānjie all day long;
 
 45
 学 (F 學)
-[xué] study, learn; 
-    学校 xuéxiào school; 
+[xué] study, learn;
+    学校 xuéxiào school;
     学生 xuésheng student
 {Compare with 字 zì written character}
 
 46
 对 (F 對)
-[duì] correct, answer, treat, agree, mutual, pair; 
+[duì] correct, answer, treat, agree, mutual, pair;
     对不起 duìbuqǐ excuse me
 
 47
 可
-[kě] ~able, (= 可以 kěyǐ) may, can, (= 可是 kěshì) but, however; 
-    可爱 kěài loveable, cute; 
-    可能 kěnéng possible, probable, maybe; 
+[kě] ~able, (= 可以 kěyǐ) may, can, (= 可是 kěshì) but, however;
+    可爱 kěài loveable, cute;
+    可能 kěnéng possible, probable, maybe;
     可口可乐 kěkǒukělè Coca Cola
 [kè] 可汗 kèhán khan
 
@@ -46,46 +46,46 @@
 
 49
 里
-[lǐ] neighbourhood, half kilometer, <family name>, (F 裏, 裡) in, inside, lining; 
-    哪里 ? nǎli ? where?; 
-    那里 nàli there; 
+[lǐ] neighbourhood, half kilometer, <family name>, (F 裏, 裡) in, inside, lining;
+    哪里 ? nǎli ? where?;
+    那里 nàli there;
     这里 zhèli here
 
 50
 后
-[hòu] queen, (F 後) after, behind, <family name>; 
+[hòu] queen, (F 後) after, behind, <family name>;
     后天 hòutiān the day after tomorrow
 
 51
 小
-[xiǎo] small; 
+[xiǎo] small;
     大小 dàxiǎo size
 
 52
 么
-[me/mo] (F麼, 末) (interrogative suffix) 
-    什么 ? shénme ? what ?; 
-    为什么 ? wèishénme ? why ? 
+[me/mo] (F麼, 末) (interrogative suffix)
+    什么 ? shénme ? what ?;
+    为什么 ? wèishénme ? why ?
     没什么 ! méi shénme ! It doesn't matter!, Never mind!;
     怎么 ? zěnme ? how ?
 [yāo] (S 幺) youngest, one (e.g. in bus/house/phone numbers)
 
 53
 心
-[xīn] heart; 
-    小心 xiǎoxīn be careful; 
-    心理 xīnlǐ psychology, mentality; 
+[xīn] heart;
+    小心 xiǎoxīn be careful;
+    心理 xīnlǐ psychology, mentality;
     中心 zhōngxīn center
 
 54
 多
-[duō] many, much, more; 
-    多大 duōdà how large?; 
+[duō] many, much, more;
+    多大 duōdà how large?;
     多少 duōshǎo how many/much?
 
 55
 天
-[tiān] sky, heaven, god, day, (= 天空 tiānkōng) sky; 
+[tiān] sky, heaven, god, day, (= 天空 tiānkōng) sky;
     天气 tiānqì weather
 {
     天干 tiāngān the Ten Heavenly Stems:
@@ -101,13 +101,13 @@
 
 57
 能
-[néng] can, be able; 
-    能够 nénggòu be capable of; 
+[néng] can, be able;
+    能够 nénggòu be capable of;
     可能 kě'néng maybe
 
 58
 好
-[hǎo] good, good to..., easy to...; 
+[hǎo] good, good to..., easy to...;
     你好 ! Nǐhǎo! Hello!
 [hào] to like
 [hāo] 好好儿 hǎohāor in perfectly good condition
@@ -119,10 +119,10 @@
 
 60
 然
-[rán] right, correct, so, like that; 
-    虽然 suīrán although; 
-    忽然 hūrán suddenly; 
-    当然 dāngrán of course; 
+[rán] right, correct, so, like that;
+    虽然 suīrán although;
+    忽然 hūrán suddenly;
+    当然 dāngrán of course;
     自然 zìrán nature
 
 61

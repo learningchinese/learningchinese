@@ -118,3 +118,7 @@ td pre {
 .char-box {
     font-size: 36px;
 }
+
+.large-text {
+    font-size: 122%;
+}

@@ -6,6 +6,7 @@ import { SingleCharacter } from "../../models/single-character.model";
 import { Pagination } from "../../models/pagination.model";
 import { StoreUtil } from "../../utils/store.util";
 import { PubSubService } from "../../services/pub-sub.service";
+import { StringUtil } from "../../utils/string.util";
 
 @Component({
     selector: "dashboard",
@@ -23,6 +24,7 @@ export class DashBoardComponent implements OnInit {
         private popupService: PopupService,
         private singleCharacterService: SingleCharacterService,
         private storeUtil: StoreUtil,
+        private stringUtil: StringUtil,
         private pubSubService: PubSubService
     ) { }
 
@@ -55,8 +57,9 @@ export class DashBoardComponent implements OnInit {
                     this.pagination.endPage = this.pagination.numOfPages - 1;
                 }
                 this.pagination.currentPage = page;
+                this.storeUtil.cache.set('dash-board:page', page);
             }).catch(err => {
-                console.log("Load common characters failed", err);
+                console.log("Load common characters fail");
                 this.popupService.showPopup('Load Data', 'Fail to load common characters.');
             }).then(() => this.isPending = false);
         }
@@ -82,7 +85,20 @@ export class DashBoardComponent implements OnInit {
         let html = '';
         if (s) {
             let ulOpen = false;
-            let lines = s.split('\n').filter(t => !!t && t.length > 0);
+            let lines = s.split('\n')
+            .filter(t => !!t && t.length > 0)
+            .map(t => {
+                //add link for each Chinese character
+                let r = '';
+                for (let i = 0, n = t.length; i < n; i++) {
+                    if(this.stringUtil.checkChineseCharacter(t.charAt(i))) {
+                        r += `<a href="#/character/${t.charAt(i)}">${t.charAt(i)}</a>`;
+                    } else {
+                        r += t.charAt(i);
+                    }
+                }
+                return r;
+            });
             for (let i = 0, n = lines.length; i < n; i++) {
                 if (/^\s+/.test(lines[i])) {
                     if (!ulOpen) {

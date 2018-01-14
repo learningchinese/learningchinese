@@ -111,7 +111,20 @@ export class CharacterComponent implements OnInit, OnDestroy {
         let html = '';
         if (s) {
             let ulOpen = false;
-            let lines = s.split('\n').filter(t => !!t && t.length > 0);
+            let lines = s.split('\n')
+            .filter(t => !!t && t.length > 0)
+            .map(t => {
+                //add link for each Chinese character
+                let r = '';
+                for (let i = 0, n = t.length; i < n; i++) {
+                    if(this.stringUtil.checkChineseCharacter(t.charAt(i))) {
+                        r += `<a href="#/character/${t.charAt(i)}">${t.charAt(i)}</a>`;
+                    } else {
+                        r += t.charAt(i);
+                    }
+                }
+                return r;
+            });
             for (let i = 0, n = lines.length; i < n; i++) {
                 if (/^\s+/.test(lines[i])) {
                     if (!ulOpen) {
