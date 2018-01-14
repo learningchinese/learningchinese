@@ -69,7 +69,6 @@ export class NavigationComponent implements OnInit, OnDestroy {
                 }
             } if (typeof tab === 'string') {
                 let cur = this.menuItems.find(t => t['title'] === tab || t['path'] === tab);
-                console.log(cur);
                 if (!!cur) {
                     this.currentTab = cur;
                 }

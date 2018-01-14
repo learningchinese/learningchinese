@@ -61,13 +61,21 @@ export class SingleCharacterService extends Service<SingleCharacter> {
     private findSingleCharacter(c): Promise<SingleCharacter> {
         return this.findCharacterIndexPage(c)
             .then(idx => {
-                return this.findCommonCharacters(idx, 20).then(hitList => {
-                    let char: SingleCharacter = hitList.hits.find(t => t.sc === c || t.tc === c);
-                    if (!char) {
-                        throw Error(`Not found character "${c}"`);
-                    }
-                    return char;
-                }).catch(err => err);
+                if (idx >= 0) {
+                    return this.findCommonCharacters(idx, 20).then(hitList => {
+                        let char: SingleCharacter = hitList.hits.find(t => t.sc === c || t.tc === c);
+                        if (!char) {
+                            throw Error(`Not found character "${c}"`);
+                        }
+                        return char;
+                    }).catch(err => err);
+                } else {
+                    // git image maybe OK
+                    let char = new SingleCharacter();
+                    char.sc = c;
+                    char.definition = 'Not found definition.';
+                    return Promise.resolve(char);
+                }
             }).catch(err => err);
     }
 
