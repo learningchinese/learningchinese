@@ -12,8 +12,8 @@ import { StoreUtil } from "../../utils/store.util";
     styleUrls: [],
 })
 export class DashBoardComponent implements OnInit {
-    private characters: SingleCharacter[] = [];
-    private pagination: Pagination;
+    public characters: SingleCharacter[] = [];
+    public pagination: Pagination;
     private total: number;
     private isPending: boolean;
     private page: number;
@@ -59,7 +59,7 @@ export class DashBoardComponent implements OnInit {
         }
     }
 
-    detectPrePagination() {
+    detectPrePagination(e) {
         let p = this.pagination.detectPrePagination();
         if (p !== this.pagination) {
             this.pagination = p;
@@ -67,7 +67,7 @@ export class DashBoardComponent implements OnInit {
         }
     }
 
-    detectNextPagination() {
+    detectNextPagination(e) {
         let p = this.pagination.detectNextPagination();
         if (p !== this.pagination) {
             this.pagination = p;

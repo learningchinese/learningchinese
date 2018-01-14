@@ -11,8 +11,8 @@
             <div class="modal-body" [innerHtml]="popupService.content">
             </div>
             <div class="modal-footer">
-                <button [hidden]="!popupService.isEnableCancel()" type="button" class="btn btn-default" (click)="popupService.invokeCancel()">Cancel</button>
-                <button type="button" class="btn btn-primary" (click)="popupService.invokeSubmit()">OK</button>
+                <button [hidden]="!popupService.isEnableCancel()" type="button" class="btn btn-default" (click)="popupService.invokeCancel($event)">Cancel</button>
+                <button type="button" class="btn btn-primary" (click)="popupService.invokeSubmit($event)">OK</button>
             </div>
         </div>
     </div>

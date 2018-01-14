@@ -16,13 +16,13 @@ import { SingleCharacterService } from "../../services/single-character.service"
 export class CharacterComponent implements OnInit, OnDestroy {
     private static get LAST_TERM_STORE_KEY() { return 'LAST_TERM_STORE_KEY' };
 
-    private term: string;
-    private gifUrl: string;
+    public term: string;
+    public gifUrl: string;
     private flagLockImg: boolean = false;
     private flagCustomImg: boolean = false;
     private sub: Subscription;
 
-    private char: SingleCharacter;
+    public char: SingleCharacter;
 
     @ViewChild("gifImg") viewGifImg: ElementRef;
 
@@ -82,7 +82,7 @@ export class CharacterComponent implements OnInit, OnDestroy {
         this.flagCustomImg = false;
     }
 
-    private searchCharacter() {
+    public searchCharacter() {
         if (this.term != null && this.term.trim() != '') {
             this.singleCharacterService.findByCharacter(this.term)
                 .then(entity => {
@@ -96,7 +96,7 @@ export class CharacterComponent implements OnInit, OnDestroy {
         }
     }
 
-    private enterSearch(keyCode: number) {
+    public enterSearch(keyCode: number) {
         if (keyCode == 13) {
             this.searchCharacter();
         }
