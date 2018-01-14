@@ -72,8 +72,6 @@ export class CharacterComponent implements OnInit, OnDestroy {
         this.renderer.listen(this.viewGifImg.nativeElement, "click", (event) => {
             if (!this.flagLockImg) {
                 this.loadGifImg();
-            } else {
-                this.popupService.showPopup('Locked', 'Locked');
             }
         });
     }
@@ -83,7 +81,7 @@ export class CharacterComponent implements OnInit, OnDestroy {
     }
 
     private loadGifImg() {
-        this.gifUrl = this.char.sc ? '/assets/gif/char/' + this.char.sc : '';
+        this.gifUrl = !!this.term ? '/assets/gif/char/' + this.term.charAt(0) : '';
         this.flagCustomImg = false;
     }
 
