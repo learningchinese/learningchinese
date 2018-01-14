@@ -26,6 +26,7 @@ import { SingleCharacterService } from "./services/single-character.service"
 import { StringUtil } from "./utils/string.util";
 import { StoreUtil } from "./utils/store.util";
 import { SanitizeHtmlPipe } from "./pipes/sanitize-html.pipe";
+import { PubSubService } from "./services/pub-sub.service";
 
 @NgModule({
   imports: [
@@ -52,7 +53,8 @@ import { SanitizeHtmlPipe } from "./pipes/sanitize-html.pipe";
     PopupService,
     UserService,
     StoreUtil,
-    SingleCharacterService
+    SingleCharacterService,
+    PubSubService
   ],
   bootstrap: [AppComponent]
 })

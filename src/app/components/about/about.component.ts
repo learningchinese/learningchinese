@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { PubSubService } from "../../services/pub-sub.service";
 
 @Component({
     selector: "about-page",
@@ -9,9 +10,10 @@ import { Component, OnInit } from "@angular/core";
 })
 export class AboutComponent implements OnInit {
 
-    constructor() {
+    constructor(private pubSubService: PubSubService) {
     }
 
     ngOnInit(): void {
+        this.pubSubService.publish(PubSubService.TOPICS.NAVIGAION_TAB_CHANGE, 'About');
     }
 }

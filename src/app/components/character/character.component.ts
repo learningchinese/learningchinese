@@ -7,6 +7,7 @@ import { StringUtil } from "../../utils/string.util";
 import { PopupService } from "../../services/popup.service";
 import { SingleCharacter } from "../../models/single-character.model"
 import { SingleCharacterService } from "../../services/single-character.service"
+import { PubSubService } from "../../services/pub-sub.service";
 
 @Component({
     selector: "character-page",
@@ -32,10 +33,13 @@ export class CharacterComponent implements OnInit, OnDestroy {
         private singleCharacterService: SingleCharacterService,
         private storeUtil: StoreUtil,
         private route: ActivatedRoute,
+        private pubSubService: PubSubService
     ) {
     }
 
     ngOnInit(): void {
+        this.pubSubService.publish(PubSubService.TOPICS.NAVIGAION_TAB_CHANGE, 'Character');
+
         this.sub = this.route.params.subscribe(params => {
             let c = params['char'];
             if (!!c) {

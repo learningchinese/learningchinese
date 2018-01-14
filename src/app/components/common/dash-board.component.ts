@@ -5,6 +5,7 @@ import { SingleCharacterService } from "../../services/single-character.service"
 import { SingleCharacter } from "../../models/single-character.model";
 import { Pagination } from "../../models/pagination.model";
 import { StoreUtil } from "../../utils/store.util";
+import { PubSubService } from "../../services/pub-sub.service";
 
 @Component({
     selector: "dashboard",
@@ -21,7 +22,8 @@ export class DashBoardComponent implements OnInit {
     constructor(
         private popupService: PopupService,
         private singleCharacterService: SingleCharacterService,
-        private storeUtil: StoreUtil
+        private storeUtil: StoreUtil,
+        private pubSubService: PubSubService
     ) { }
 
     ngOnInit(): void {
@@ -35,6 +37,7 @@ export class DashBoardComponent implements OnInit {
         this.pagination.endPage = this.pagination.maxNumOfPages - 1;
 
         this.loadPage(this.page);
+        this.pubSubService.publish(PubSubService.TOPICS.NAVIGAION_TAB_CHANGE, 'Home');
     }
 
     loadPage(page: number, forceLoad: boolean = false) {
