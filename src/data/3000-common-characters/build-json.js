@@ -74,7 +74,7 @@ function buildJson(index) {
         }
 
         //console.log(jdata);
-        fs.writeFile('../common-characters/' + index + '.json', JSON.stringify(jdata), (err) => {
+        fs.writeFile('../../assets/json/common-characters/' + index + '.json', JSON.stringify(jdata), (err) => {
             if (err) throw err;
             console.log('Success');
 
@@ -86,7 +86,7 @@ function buildJson(index) {
                 }
             });
             if (index === FILE_COUNT - 1){
-                fs.writeFile('../common-characters/index.json', `{\n${MAP_IDX.replace(/,\n$/, '')}\n}`, (err) => {
+                fs.writeFile('../../assets/json/common-characters/index.json', `{\n${MAP_IDX.replace(/,\n$/, '')}\n}`, (err) => {
                     if (err) throw err;
                     console.log('Saved');
                 });
@@ -111,7 +111,7 @@ function isChineseCharacter(str) {
 
 let MAP_IDX = '';
 //0, 1, 2,...,150
-const FILE_COUNT = 16;
+const FILE_COUNT = 28;
 for(let i = 0; i < FILE_COUNT; i++) {
     buildJson(i);
 }
