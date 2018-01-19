@@ -20,7 +20,6 @@ export class CharacterComponent implements OnInit, OnDestroy {
     public term: string;
     public gifUrl: string;
     private flagLockImg: boolean = false;
-    private flagCustomImg: boolean = false;
     private sub: Subscription;
 
     public char: SingleCharacter = new SingleCharacter();
@@ -53,25 +52,23 @@ export class CharacterComponent implements OnInit, OnDestroy {
         this.renderer.listen(this.viewGifImg.nativeElement, "load", (event) => {
             this.flagLockImg = true;
             if (this.viewGifImg.nativeElement.complete) {
-                if (!this.flagCustomImg) {
-                    setTimeout(() => {
-                        let c = document.createElement('canvas');
-                        let w = c.width = this.viewGifImg.nativeElement.width;
-                        let h = c.height = this.viewGifImg.nativeElement.height;
-                        c.getContext('2d').drawImage(this.viewGifImg.nativeElement, 0, 0, w, h);
-                        this.gifUrl = c.toDataURL("image/gif");
-                        this.flagCustomImg = true;
-                        this.flagLockImg = false;
-                    }, 4950);
-                } else {
-                    this.flagLockImg = false;
-                }
+                this.flagLockImg = false;
             }
         });
 
         this.renderer.listen(this.viewGifImg.nativeElement, "click", (event) => {
             if (!this.flagLockImg) {
-                this.loadGifImg();
+                let c = document.createElement('canvas');
+                let w = c.width = this.viewGifImg.nativeElement.width;
+                let h = c.height = this.viewGifImg.nativeElement.height;
+                c.getContext('2d').drawImage(this.viewGifImg.nativeElement, 0, 0, w, h);
+                this.gifUrl = c.toDataURL("image/gif");
+
+                this.flagLockImg = true;
+                setTimeout(() => {
+                    this.loadGifImg();
+                    this.flagLockImg = false;
+                }, 500);
             }
         });
     }
@@ -82,7 +79,6 @@ export class CharacterComponent implements OnInit, OnDestroy {
 
     private loadGifImg() {
         this.gifUrl = !!this.term ? '/assets/gif/char/' + this.term.charAt(0) : '';
-        this.flagCustomImg = false;
     }
 
     public searchCharacter() {
@@ -110,19 +106,19 @@ export class CharacterComponent implements OnInit, OnDestroy {
         if (s) {
             let ulOpen = false;
             let lines = s.split('\n')
-            .filter(t => !!t && t.length > 0)
-            .map(t => {
-                //add link for each Chinese character
-                let r = '';
-                for (let i = 0, n = t.length; i < n; i++) {
-                    if(this.stringUtil.checkChineseCharacter(t.charAt(i))) {
-                        r += `<a href="#/character/${t.charAt(i)}">${t.charAt(i)}</a>`;
-                    } else {
-                        r += t.charAt(i);
+                .filter(t => !!t && t.length > 0)
+                .map(t => {
+                    //add link for each Chinese character
+                    let r = '';
+                    for (let i = 0, n = t.length; i < n; i++) {
+                        if (this.stringUtil.checkChineseCharacter(t.charAt(i))) {
+                            r += `<a href="#/character/${t.charAt(i)}">${t.charAt(i)}</a>`;
+                        } else {
+                            r += t.charAt(i);
+                        }
                     }
-                }
-                return r;
-            });
+                    return r;
+                });
             for (let i = 0, n = lines.length; i < n; i++) {
                 if (/^\s+/.test(lines[i])) {
                     if (!ulOpen) {
