@@ -18,7 +18,7 @@ function copyFileContent(savPath, srcPath) {
 }
 
 function buildJson(index) {
-    let path = index + '.txt';
+    let path = `3000-common-characters/${index}.txt`;
     let readable = fs.createReadStream(path, {
         flags: 'r',
         encoding: 'utf-8',
@@ -43,6 +43,10 @@ function buildJson(index) {
         while (null !== (chunk = readable.read(1))) {
             if (chunk == '\n' || chunk == '\r') {
                 if (/^\d+$/.test(line)) {
+                    if(typeof obj.sc !== 'string') {
+                        console.error('====Invalid "character"\n', obj);
+                        throw Error(`Invalid "character" in file ${index}.txt`);
+                    }
                     obj.definition = obj.definition.trim();
                     jdata.hits.push(obj);
                     obj = {};
@@ -74,7 +78,7 @@ function buildJson(index) {
         }
 
         //console.log(jdata);
-        fs.writeFile('../../assets/json/common-characters/' + index + '.json', JSON.stringify(jdata), (err) => {
+        fs.writeFile('../assets/json/common-characters/' + index + '.json', JSON.stringify(jdata), (err) => {
             if (err) throw err;
             console.log('Success');
 
@@ -85,8 +89,8 @@ function buildJson(index) {
                     MAP_IDX += `"${item.tc}": ${index},\n`;
                 }
             });
-            if (index === FILE_COUNT - 1){
-                fs.writeFile('../../assets/json/common-characters/index.json', `{\n${MAP_IDX.replace(/,\n$/, '')}\n}`, (err) => {
+            if (index === FILE_COUNT - 1) {
+                fs.writeFile('../assets/json/common-characters/index.json', `{\n${MAP_IDX.replace(/,\n$/, '')}\n}`, (err) => {
                     if (err) throw err;
                     console.log('Saved');
                 });
@@ -111,7 +115,8 @@ function isChineseCharacter(str) {
 
 let MAP_IDX = '';
 //0, 1, 2,...,150
-const FILE_COUNT = 28;
-for(let i = 0; i < FILE_COUNT; i++) {
+const FILE_COUNT = 56;
+for (let i = 0; i < FILE_COUNT; i++) {
     buildJson(i);
 }
+

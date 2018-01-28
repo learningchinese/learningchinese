@@ -7,5 +7,5 @@ import { PopupService } from "../../services/popup.service";
     templateUrl: "./popup.component.html"
 })
 export class PopupComponent {
-constructor(public popupService: PopupService) {}
+    constructor(public popupService: PopupService) { }
 }
