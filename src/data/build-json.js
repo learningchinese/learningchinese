@@ -32,9 +32,9 @@ function buildJson(index) {
         hits: []
     };
     let obj = {
-        _id: (20 * index + 1) + '',
-        sc: '',
-        tc: '',
+        _id: null,
+        sc: null,
+        tc: null,
         pinyin: null,
         definition: ''
     };
@@ -43,18 +43,22 @@ function buildJson(index) {
         while (null !== (chunk = readable.read(1))) {
             if (chunk == '\n' || chunk == '\r') {
                 if (/^\d+$/.test(line)) {
-                    if(typeof obj.sc !== 'string') {
-                        console.error('====Invalid "character"\n', obj);
-                        throw Error(`Invalid "character" in file ${index}.txt`);
+                    if (typeof obj._id !== 'string') {
+                        obj._id = line.trim();
+                    } else {
+                        if (typeof obj.sc !== 'string') {
+                            console.error('====Invalid "character"\n', obj);
+                            throw Error(`Invalid "character" in file ${index}.txt`);
+                        }
+                        obj.definition = obj.definition.trim();
+                        jdata.hits.push(obj);
+                        obj = {};
+                        obj._id = line;
+                        obj.definition = '';
                     }
-                    obj.definition = obj.definition.trim();
-                    jdata.hits.push(obj);
-                    obj = {};
-                    obj._id = line;
-                    obj.definition = '';
                 } else {
                     obj.definition += line + '\n';
-                    let term = line.replace(/[\sFA,\(\)]/g, '');
+                    let term = line.replace(/[\sFAS,\(\)]/g, '');
                     if (isChineseCharacter(term)) {
                         obj.sc = term.charAt(0);
                         if (term.length > 1) {
@@ -115,7 +119,7 @@ function isChineseCharacter(str) {
 
 let MAP_IDX = '';
 //0, 1, 2,...,150
-const FILE_COUNT = 56;
+const FILE_COUNT = 136;
 for (let i = 0; i < FILE_COUNT; i++) {
     buildJson(i);
 }
