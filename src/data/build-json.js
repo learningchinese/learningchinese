@@ -81,6 +81,8 @@ function buildJson(index) {
             }
         }
 
+        jdata.total = 2715;
+        jdata.count = jdata.hits.length;
         //console.log(jdata);
         fs.writeFile('../assets/json/common-characters/' + index + '.json', JSON.stringify(jdata), (err) => {
             if (err) throw err;
@@ -123,4 +125,3 @@ const FILE_COUNT = 136;
 for (let i = 0; i < FILE_COUNT; i++) {
     buildJson(i);
 }
-
